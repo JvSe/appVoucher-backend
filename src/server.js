@@ -1,3 +1,4 @@
+require('dotenv').config();
 
 const express = require('express');
 const mongoose = require('mongoose');
@@ -7,7 +8,7 @@ const routes = require('./routes');
 const server = express();
 
 // GET, POST, PUT, DELETE
-mongoose.connect('mongodb+srv://jvse:2301200023@cluster0.avfwm.mongodb.net/VoucherTest?retryWrites=true&w=majority', {
+mongoose.connect(process.env.MONGO_DB, {
     useNewUrlParser: true,
     useFindAndModify: false,
     useUnifiedTopology: true
